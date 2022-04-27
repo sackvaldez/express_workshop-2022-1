@@ -4,11 +4,12 @@
   "description": "An API Rest using express.js",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sackvaldez/express_workshop.git"
+    "url": "git+https://github.com/sackvaldez/express_workshop-2022-1.git"
   },
   "keywords": [
     "api",
@@ -18,7 +19,12 @@
   ],
   "author": "Raul Valdez",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sackvaldez/express_workshop-2022-1/issues"
+  },
+  "homepage": "https://github.com/sackvaldez/express_workshop-2022-1#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }
