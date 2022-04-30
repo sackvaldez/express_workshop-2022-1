@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sackvaldez/express_workshop-2022-1#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }

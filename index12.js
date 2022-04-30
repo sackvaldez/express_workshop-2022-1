@@ -1,14 +1,10 @@
 // console.log('Hola mundillo')
 
-const bodyParser= require('body-parser')
+
 const express= require('express'); //require es una palabra reservada que importa archivos, dada una ruta específica
 const req = require('express/lib/request');
 const app= express ();
 const {pokemon} = require('./pokedex1.json');
-/*EL USE SE UTILIZA CUANDO QUEREMOS QUE UNA FUNCION SE LE APLIQUE A TODAS LAS PETICIONES QUE 
-ENTREN A UN SERVIDOR (MIDDLEWARES)*/
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 /*
 VERBOS HTTP
@@ -21,10 +17,6 @@ VERBOS HTTP
 
 app.get("/",(req, res, next)=>{
    return res.status(200).send("Bienvenido al pokedex"); 
-});
-//PRIMER POST
-app.post("/pokemon", (req, res, next) => {
-return res.status(200).send(req.body);
 });
  
 app.get("/pokemon",(req,res,next)=>{
@@ -45,7 +37,7 @@ app.get('/pokemon/:name([A-Za-z]+)',(req,res, next) => {
 
     const name= req.params.name;
     const pk= pokemon.filter((p) => {
-           return (p.name.toUpperCase() == name.toUpperCase())  &&  null;
+           return (p.name.toUpperCase() == name.toUpperCase()) ? p: null;
             
         });
         
