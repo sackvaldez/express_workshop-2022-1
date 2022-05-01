@@ -1,5 +1,6 @@
 // console.log('Hola mundillo')
 
+const bodyParser= require('body-parser');
 const morgan= require('morgan');
 const express= require('express'); //require es una palabra reservada que importa archivos, dada una ruta específica
 const req = require('express/lib/request');
@@ -9,9 +10,8 @@ const pokemon= require('./routes/pokemon');
 /*EL USE SE UTILIZA CUANDO QUEREMOS QUE UNA FUNCION SE LE APLIQUE A TODAS LAS PETICIONES QUE 
 ENTREN A UN SERVIDOR (MIDDLEWARES)*/
 app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 
