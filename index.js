@@ -9,10 +9,10 @@ const app= express ();
 const pokemon= require('./routes/pokemon');
 const user= require('./routes/user'); 
 //middlewares
-const auth= require('./middleware/auth');
-const notFound= require('./middleware/notFound');
+const auth= require('./middleware/auth'); //PARA CHECAR AUTENTICACION
+const notFound= require('./middleware/notFound'); //PARA PROCESAR PAGINAS QUE NO EXISTEN
 const index= require('./middleware/index');
-const cors= require('./middleware/cors');
+const cors= require('./middleware/cors'); //PARA CHECAR PERMISOS DEL SERVIDOR
 
 
 /*EL USE SE UTILIZA CUANDO QUEREMOS QUE UNA FUNCION SE LE APLIQUE A TODAS LAS PETICIONES QUE 
@@ -37,7 +37,6 @@ app.get("/",index);
 app.use("/user", user); //  TODOS PUEDEN ACCEDER A USER
 app.use(auth);
 app.use("/pokemon", pokemon);
-
 app.use(notFound);
 
 app.listen(process.env.PORT || 3000, ()=> { //el "()=>" es lo mismo a usar "function()"
