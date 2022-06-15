@@ -39,6 +39,8 @@ app.use(auth);
 app.use("/pokemon", pokemon);
 app.use(notFound);
 
-app.listen(process.env.PORT || 3000, ()=> { //el "()=>" es lo mismo a usar "function()"
+/*el "()=>" es lo mismo a usar "function()" | process.env va a buscar en las variables de entorno
+    una variable llamada PORT (la cual no tenemos definida nosotros pero en HEROKU sí), y ahí se le asignará el puerto 3000*/
+app.listen(process.env.PORT || 3000, ()=> {
     console.log('The server is running')
 });
